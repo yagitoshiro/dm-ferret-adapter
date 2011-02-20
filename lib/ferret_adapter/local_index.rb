@@ -3,7 +3,7 @@ module DataMapper
     class FerretAdapter::LocalIndex
       def initialize(options)
         @options = options
-        @options = { :path => @options[:path], :key => [:id, :_type] }
+        @options.merge({:key => [:id, :_type]})
         create_or_initialize_index
       end
 
